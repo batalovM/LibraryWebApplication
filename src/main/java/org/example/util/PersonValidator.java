@@ -28,7 +28,7 @@ public class PersonValidator implements Validator {
     @Override
     public void validate(Object o, Errors errors) {
         Person person = (Person) o;
-        if(personDAO.show(person.getFull_name()).isPresent()){
+        if(personDAO.getPersonByFullName(person.getFullName()).isPresent()){
             errors.rejectValue("full_name", "", "Человек уже добавлен");
         }
     }

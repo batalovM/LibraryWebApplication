@@ -9,34 +9,34 @@ public class Person {
 
     @NotEmpty(message = "ФИО не должно быть пустым!")
     @Pattern(regexp =  "^[А-ЯЁ][а-яё]+\\s+[А-ЯЁ][а-яё]+\\s+[А-ЯЁ][а-яё]+$", message = "ФИО нужно записывать в виде Фамилия Имя Отчество")
-    private String full_name;
-    @Min(value = 0, message = "Возраст должен быть больше 0!")
-    private int year_of_birth;
+    private String fullName;
+    @Min(value = 1900, message = "Дата должена быть больше 1900!")
+    private int yearOfBirth;
     public Person() {}
     public Person(int id, String full_name, int year_of_birth) {
         this.id = id;
-        this.full_name = full_name;
-        this.year_of_birth = year_of_birth;
+        this.fullName = full_name;
+        this.yearOfBirth = year_of_birth;
     }
 
     public int getId() {return id;}
 
     public void setId(int id) {this.id = id;}
 
-    public String getFull_name() {
-        return full_name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFull_name(String full_name) {
-        this.full_name = full_name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public int getYear_of_birth() {
-        return year_of_birth;
+    public int getYearOfBirth() {
+        return yearOfBirth;
     }
 
-    public void setYear_of_birth(int year_of_birth) {
-        this.year_of_birth = year_of_birth;
+    public void setYearOfBirth(int yearOfBirth) {
+        this.yearOfBirth = yearOfBirth;
     }
 
 }

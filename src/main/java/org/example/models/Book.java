@@ -28,6 +28,7 @@ public class Book {
         this.author = author;
         this.year = year;
     }
+    public Book(){}
 
     public int getId() {
         return id;
