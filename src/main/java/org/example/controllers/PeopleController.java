@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * @author batal
@@ -29,13 +30,16 @@ public class PeopleController {
 
     @GetMapping()
     public String index(Model model){
+        List<Person> list = personDAO.index();
+        for(Person person : list){
+            System.out.println(person.getId() + ", " + person.getFullName() + ", " + person.getYearOfBirth());
+        }
         model.addAttribute("people", personDAO.index());
         return "people/index";
     }
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model){
-        System.out.println(id);
         model.addAttribute("person", personDAO.show(id));
         model.addAttribute("book", personDAO.getBooksByPerson(id));
         return "people/show";
