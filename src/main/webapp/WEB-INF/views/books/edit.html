@@ -8,7 +8,7 @@
 <body>
 <div class="container">
 <form th:method="PATCH" th:action="@{/books/{id}(id=${book.getId()})}" th:object="${book}">
-    <label for="title">Введите ФИО</label>
+    <label for="title">Введите Название книги</label>
     <input type="text" th:field="*{title}" id="title">
     <div style="color:red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title Error</div>
     <br/>

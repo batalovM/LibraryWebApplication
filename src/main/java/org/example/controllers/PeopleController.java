@@ -1,6 +1,7 @@
 package org.example.controllers;
 
 import org.example.dao.PersonDAO;
+import org.example.models.Book;
 import org.example.models.Person;
 import org.example.util.PersonValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author batal
@@ -42,6 +44,8 @@ public class PeopleController {
     public String show(@PathVariable("id") int id, Model model){
         model.addAttribute("person", personDAO.show(id));
         model.addAttribute("book", personDAO.getBooksByPerson(id));
+        List<Book> s = personDAO.getBooksByPerson(id);
+        System.out.println(s.size());
         return "people/show";
     }
     @GetMapping("/new")

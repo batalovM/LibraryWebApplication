@@ -1,3 +1,1 @@
-select *
-from person;
-select * from book;
+select * from book
