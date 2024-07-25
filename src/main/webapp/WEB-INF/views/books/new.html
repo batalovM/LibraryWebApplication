@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>New Book</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
+<div class="container">
 <form th:method="POST" th:action="@{/books}" th:object="${book}">
     <label for="title">Введите название книги: </label>
     <input type="text" th:field="*{title}" id="title"/>
@@ -18,7 +20,8 @@
     <input type="text" th:field="*{year}" id="year"/>
     <div style="color:red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Year Error</div>
     <br/>
-    <input type="submit" value="Создать!"/>
+    <input type="submit" class="color-button" value="Создать!"/>
 </form>
+</div>
 </body>
 </html>

@@ -20,9 +20,9 @@ public class Book {
     @NotNull(message = "Год не может быть пустым")
     @Min(value = 750, message = "Год не может быть меньше 750")
     @Max(value = 2025, message = "Книга не может быть из будущего")
-    private String year;
+    private int year;
 
-    public Book(int id, String title, String author, String year) {
+    public Book(int id, String title, String author, int year) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -54,11 +54,11 @@ public class Book {
         this.author = author;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 }

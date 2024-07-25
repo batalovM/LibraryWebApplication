@@ -35,15 +35,15 @@ public class PersonDAO {
     }
 
     public void update(int id, Person updatePerson){
-        jdbcTemplate.update("UPDATE Person SET (full_name, year_of_birth), WHERE id=?",
-                updatePerson.getFullName(), updatePerson.getYearOfBirth(), id);
+        jdbcTemplate.update("UPDATE Person SET full_name=?, year_of_birth=? WHERE id=?", updatePerson.getFullName(),
+                updatePerson.getYearOfBirth(), id);
     }
     public void delete(int id){
         jdbcTemplate.update("DELETE FROM Person WHERE id=?", id);
     }
 
-    public Optional<Person> getPersonByFullName(String full_name){
-        return jdbcTemplate.query("SELECT * FROM Person WHERE full_name=?", new Object[]{full_name},
+    public Optional<Person> getPersonByFullName(String fullName){
+        return jdbcTemplate.query("SELECT * FROM Person WHERE full_name=?", new Object[]{fullName},
                 new BeanPropertyRowMapper<>(Person.class)).stream().findAny();
     }
     public List<Book> getBooksByPerson(int id){

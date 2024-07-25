@@ -13,10 +13,10 @@ public class Person {
     @Min(value = 1900, message = "Дата должена быть больше 1900!")
     private int yearOfBirth;
     public Person() {}
-    public Person(int id, String full_name, int year_of_birth) {
+    public Person(int id, String fullName, int yearOfBirth) {
         this.id = id;
-        this.fullName = full_name;
-        this.yearOfBirth = year_of_birth;
+        this.fullName = fullName;
+        this.yearOfBirth = yearOfBirth;
     }
 
     public int getId() {return id;}

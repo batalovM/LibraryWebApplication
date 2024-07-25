@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
-
+<div class="container">
 <div th:each="book : ${book}">
-    <a th:href="@{/book/{id}(id=${book.getId()})}"
+    <a th:href="@{/books/{id}(id=${book.getId()})}"
        th:text="${book.getTitle() + ', ' + book.getAuthor() + ', ' + book.getYear()}">book</a>
 </div>
 
 <br/>
 <hr/>
 
-<a href="/books/new">Добавить книгу</a>
-
+<a href="/books/new" class="color-button">Добавить книгу</a>
+</div>
 </body>
 </html>

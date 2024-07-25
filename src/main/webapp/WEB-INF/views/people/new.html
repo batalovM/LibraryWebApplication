@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>New Person</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
-
+<div class="container">
 <form th:method="POST" th:action="@{/people}" th:object="${person}">
     <label for="fullName">Введите ФИО: </label>
     <input type="text" th:field="*{fullName}" id="fullName">
@@ -16,8 +17,9 @@
     <input type="text" th:field="*{yearOfBirth}" id="yearOfBirth">
     <div style="color:red" th:if="${#fields.hasErrors('yearOfBirth')}" th:errors="*{yearOfBirth}">Year Error</div>
     <br/>
-    <input type="submit" value="Создать!">
+    <input type="submit" class="color-button" value="Создать!">
 </form>
+</div>
 
 </body>
 </html>

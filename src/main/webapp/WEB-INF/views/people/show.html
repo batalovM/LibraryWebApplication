@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Show</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
+<div class="container">
 <p th:text="${person.getFullName() + ', ' + person.getYearOfBirth()}">VALUE</p>
 
 <div th:if="${book.isEmpty()}">
@@ -24,12 +26,12 @@
 </div>
 
 <form th:method="GET" th:action="@{/people/{id}/edit(id=${person.getId()})}">
-    <input type="submit" value="Редактировать">
+    <input type="submit" class="color-button" value="Редактировать">
 </form>
 
 <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
-    <input type="submit" value="Удалить">
+    <input type="submit" class="color-button" value="Удалить">
 </form>
-
+</div>
 </body>
 </html>
