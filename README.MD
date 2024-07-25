@@ -13,6 +13,9 @@
 
 - PostgreSQL
 
+Серверная часть:
+
+- Apache Tomcat 9
 ## Скриншоты
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
